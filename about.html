@@ -1,1 +1,44 @@
-this is a test app
+<style>
+	#a_about {
+		font-size: 15pt;
+		font-weight: bolder;
+	}
+	.data {
+		font-weight: bolder
+	}
+	#b {
+		font-weight: bold;
+	}
+	#info li {
+		margin-top: 10px;
+	}
+</style>
+<div style="padding: 5px;">
+	<div id="a_about"><i class="fa fa-question-circle"></i> ABOUT</div>
+	<hr />
+	<ul id="info">
+		
+	</ul>
+	<hr />
+</div>
+<script>
+	(function() {
+		$.post('data/info.json').then(function(data) {
+			var data_len = data.length;
+			var i = 0;
+			if (data_len < 1) return;
+			
+			var list = '';
+			do {
+				var key = data[i].key;
+				var value = data[i].value;
+				list += '<li>';
+				list += key + ' : ' + '<span id="b">' + value + '</span>';
+				list += '</li>';
+				i++;
+			} while(i < data_len);
+
+			$('#info').html(list);
+		});
+	})();
+</script>

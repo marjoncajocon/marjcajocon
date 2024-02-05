@@ -47,6 +47,7 @@ body {
 	background-color: #1976D2;
 	box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
 	display: none;
+	transition: 0.5s;
 }
 
 .sider-close {
