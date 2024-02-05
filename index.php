@@ -1,3 +1,7 @@
+<?php 
+	$req = getallheaders();
+	$user_agent = $req['User-Agent'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
