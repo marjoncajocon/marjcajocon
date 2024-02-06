@@ -1,10 +1,13 @@
 <?php 
+	// total visit
 	$cnt = '__data' . DIRECTORY_SEPARATOR . 'c.txt';
-	//@session_start();
+	@session_start();
 	if (!isset($_SESSION['v'])) {
-		//$c = float(file_get_contents($cnt));
-		//print($c);
-		
+		$c = (float)file_get_contents($cnt) + 1;
+		$fp = fopen($cnt, 'w');
+		fwrite($fp, (string)$c);
+		fclose($fp);
+		$_SESSION['v'] = 1;
 	}
 	
 ?>
