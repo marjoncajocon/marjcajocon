@@ -1,6 +1,12 @@
 <?php 
-	$req = getallheaders();
-	$user_agent = $req['User-Agent'];
+	$cnt = '__data' . DIRECTORY_SEPARATOR . 'c.txt';
+	//@session_start();
+	if (!isset($_SESSION['v'])) {
+		//$c = float(file_get_contents($cnt));
+		//print($c);
+		
+	}
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
