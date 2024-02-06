@@ -1,8 +1,4 @@
 <style>
-	#a_about {
-		font-size: 15pt;
-		font-weight: bolder;
-	}
 	.data {
 		font-weight: bolder
 	}
@@ -14,12 +10,15 @@
 	}
 </style>
 <div style="padding: 5px;">
-	<div id="a_about"><i class="fa fa-question-circle"></i> ABOUT</div>
+	<div class="title"><i class="fa fa-question-circle"></i> ABOUT</div>
 	<hr />
-	<ul id="info">
+	<div style="padding: 5px;">
+		<div class="card" style="padding: 5px;">
+			<div id="info">
 		
-	</ul>
-	<hr />
+			</div>
+		</div>
+	</div>
 </div>
 <script>
 	(function() {
@@ -28,15 +27,17 @@
 			var i = 0;
 			if (data_len < 1) return;
 			
-			var list = '';
+			var list = '<table class="table">';
 			do {
 				var key = data[i].key;
 				var value = data[i].value;
-				list += '<li>';
-				list += key + ' : ' + '<span id="b">' + value + '</span>';
-				list += '</li>';
+				list += '<tr>';
+				list += '<td style="width: 150px; color: rgb(100, 100, 100);">' +  key + '</td>';
+				list += '<td style="font-weight: bold;color: rgb(100, 100, 100);">' + value + '</td>';
+				list += '</tr>';
 				i++;
 			} while(i < data_len);
+			list += '</table>';
 
 			$('#info').html(list);
 		});

@@ -29,10 +29,10 @@
 			</button>
 			<div class="sider-item">
 				<div class="menu">
-					<button class="menu-item"><i class="fa fa-question-circle"></i> About </button>
+					<button class="menu-item" rel="about"><i class="fa fa-question-circle"></i> About </button>
 				</div>
 				<div class="menu">
-					<button class="menu-item">Contact</button>
+					<button class="menu-item" rel="contact"><i class="fa fa-address-card"></i> Contact</button>
 				</div>
 			</div>
 		</div>

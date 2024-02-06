@@ -20,13 +20,25 @@ function main() {
 		xsider.close();
 	});
 
-	var loadContent = function(page) {
+	var loadContent = function(page, _done) {
 		$.post(page).then(function(o) {
 			$('.content').html(o);
+			if (typeof(_done) == 'function') {
+				_done();
+			}
 		});
 	};
 	
 	loadContent('about.html');
+
+	// menu click
+
+	$('.menu-item').on('click', function() {
+		var rel = $(this).attr('rel');
+		loadContent(rel + '.html', function() {
+			xsider.close();
+		});
+	});
 	
 };
 main();
