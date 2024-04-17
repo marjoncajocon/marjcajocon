@@ -1,7 +1,7 @@
 var HomeSider = function() {
     var panel = new EmptyPanel().setStyle({
         width: '100%',
-        height: '100vh',
+        minHeight: '100vh',
         boxShadow: '0 0 3px rgba(0, 0, 0, 0.1)',
         position: 'relative'
     });
@@ -48,8 +48,8 @@ var HomeContent = function() {
 
 
     var tab = new Tab('home', 'justified');
-    tab.add('Profile', new EmptyPanel(), function(e) {
-        e.clear().add(new ProfileTab());
+    tab.add('Contact', new EmptyPanel(), function(e) {
+        e.clear().add(new ContactTab());
     })
     .add('Gallery', new EmptyPanel(), function() {
 
@@ -65,7 +65,7 @@ var HomeContent = function() {
 
     var stab = new EmptyPanel().setStyle({
         boxShadow: '0 0 3px rgba(0, 0, 0, 0.1)',
-        height: '100vh'
+        minHeight: '100vh'
     })
     .add(tab);
 
